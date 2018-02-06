@@ -1,0 +1,50 @@
+{
+    "name": "kreuzundquer/kqcachebuster",
+    "description": "KQCachebuster",
+    "type": "craft-plugin",
+    "version": "1.0.2",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "kqcachebuster"
+    ],
+    "support": {
+        "docs": "https://www.kreuzundquer.ch/craft-plugins",
+        "issues": "???"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kreuz+quer GmbH",
+            "homepage": "https://www.kreuzundquer.ch"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "~3.0.0-beta.23"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "kreuzundquer\\kqcachebuster\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "KQCachebuster",
+        "handle": "kqcachebuster",
+        "schemaVersion": "1.0.2",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "???",
+        "components": {
+            "kQCachebusterService": "kreuzundquer\\kqcachebuster\\services\\KQCachebusterService"
+        },
+        "class": "kreuzundquer\\kqcachebuster\\KQCachebuster"
+    }
+}

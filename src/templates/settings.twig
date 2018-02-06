@@ -1,0 +1,38 @@
+{#
+/**
+ * KQCachebuster plugin for Craft CMS 3.x
+ *
+ * KQCachebuster Settings.twig
+ *
+ * @author    kreuz+quer GmbH
+ * @copyright Copyright (c) 2017 kreuz+quer GmbH
+ * @link      www.kreuzundquer.ch
+ * @package   KQCachebuster
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("kreuzundquer\\kqcachebuster\\assetbundles\\kqcachebuster\\KQCachebusterAsset") %}
+
+{{ forms.textField({
+    first:        true,
+    label:        "Pfad zum version.txt File (inkl. Filename)",
+    id:           'pathToVersionTxt',
+    name:         'pathToVersionTxt',
+    instructions: "Pfad zum File «version.txt» von Craft basePath. Der Inhalt des Files wird als Cache-Buster verwendet (?v=[version.txt])",
+    value:        (settings['pathToVersionTxt'] ? settings['pathToVersionTxt'] : 'version.txt'),
+    autofocus:    true,
+    errors:       settings.getErrors('pathToVersionTxt')
+}) }}
+
+{{ forms.textField({
+    label:        "Cache-Buster String",
+    id:           'cacheBusterString',
+    name:         'cacheBusterString',
+    instructions: "Wird der Version vorangestellt: ?v=1.0.2",
+    value:        (settings['cacheBusterString'] ? settings['cacheBusterString'] : '?v='),
+    autofocus:    true,
+    errors:       settings.getErrors('cacheBusterString')
+}) }}
